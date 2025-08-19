@@ -3,6 +3,9 @@
 .container,
 .site-header {
   font-family: 'Verdana', serif !important;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .jumbotron .display-4 {
@@ -187,4 +190,29 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+#imagen-login {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  margin: auto;
+  display: block;
+  padding: 20px;
+}
+
+.auto-one {
+  width: 100%;
+  height: auto;
+  max-width: 185px;
+  margin: 7px;
+  float: left;
+}
+
+.auto-ul-1 {
+  list-style-type: none;
+}
+
+.li-1 {
+  text-align: right;
 }
