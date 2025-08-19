@@ -3,6 +3,7 @@
 .container,
 .site-header {
   font-family: 'Verdana', serif !important;
+  text-align: center;
 }
 
 .jumbotron .display-4 {
@@ -222,7 +223,7 @@ a.custom-card:hover {
 .login-box button {
   margin-top: 20px;
   padding: 10px;
-  background: #007bff;
+  background: #ff8000;
   color: #fff;
   border: none;
   border-radius: 6px;
