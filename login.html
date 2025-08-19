@@ -18,10 +18,18 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="login-box">
+      <img src="img/login.png" alt="Login" class="login-img">
+      <form>
+        <h2>Iniciar sesión</h2>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena">
+        <button type="submit">Ingresar</button>
+  </form>
+  <div id="loginError" class="login-error-message"></div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
