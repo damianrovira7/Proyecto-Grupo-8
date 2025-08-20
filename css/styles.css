@@ -302,3 +302,12 @@ a.custom-card:hover {
   margin-left: 16px;
 }
 
+.login-img-prod {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 450px;
+  height: 400px;
+  object-fit: contain;
+  background: #fff;
+}

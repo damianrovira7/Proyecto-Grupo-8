@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 
 			if (valid) {
+				// Guardar sesión ficticia
+				localStorage.setItem('usuarioLogueado', usuario.value.trim());
 				window.location.href = 'index.html';
 			} else {
 				if (errorDiv) errorDiv.textContent = mensaje;

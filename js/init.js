@@ -39,3 +39,8 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+// Redirige a login.html si no hay sesión iniciada (excepto en login.html)
+if (!localStorage.getItem('usuarioLogueado') && !window.location.pathname.endsWith('login.html')) {
+  window.location.href = 'login.html';
+}
