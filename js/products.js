@@ -15,16 +15,16 @@ function mostrarProductos(productos) {
 				contenedor.innerHTML = '';
 				productos.forEach(prod => {
 											contenedor.innerHTML += `
-												<div class="col-12">
-													<div class="product-card d-flex align-items-center product-row">
+												<div class="product-row">
+													<div class="product-card">
 														<img src="${prod.image}" alt="${prod.name}" class="product-img">
-														<div class="flex-grow-1 product-info">
-															<h5 class="mb-1">${prod.name}</h5>
-															<p class="mb-0 text-muted">${prod.description}</p>
+														<div class="product-info">
+															<h5 class="product-title">${prod.name}</h5>
+															<p class="product-description">${prod.description}</p>
 														</div>
 														<div class="product-price-sold">
-															<div class="fw-bold">${prod.currency} ${prod.cost}</div>
-															<div class="text-muted small">${prod.soldCount} vendidos</div>
+															<div class="product-price">${prod.currency} ${prod.cost}</div>
+															<div class="product-sold">${prod.soldCount} vendidos</div>
 														</div>
 													</div>
 												</div>

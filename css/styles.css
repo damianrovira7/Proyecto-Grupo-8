@@ -7,6 +7,7 @@
   font-family: 'Verdana', serif !important;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: left;
 }
@@ -204,9 +205,32 @@ a.custom-card:hover {
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 1366px){
+  .login-box {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px){
+  .login-box {
+    width: 42%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 320px){
+  .login-box {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
 .login-box form {
   width: 100%;
   display: flex;
@@ -248,14 +272,6 @@ a.custom-card:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
-.product-img {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 0;
-}
-
 .product-row .flex-grow-1 {
   margin-left: 8px;
 }
@@ -268,6 +284,7 @@ a.custom-card:hover {
   padding: 1rem;
   margin-bottom: 1rem;
   background: #fff;
+  width: 100%;
 }
 .product-img {
   width: 120px;
@@ -282,7 +299,7 @@ a.custom-card:hover {
 .product-price-sold {
   min-width: 120px;
   text-align: right;
-  margin-left: 16px;
+  margin-left: auto;
 }
 
 .login-img-prod {
@@ -293,4 +310,80 @@ a.custom-card:hover {
   height: 400px;
   object-fit: contain;
   background: #fff;
+}
+
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-row {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+    .login-img-prod {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    margin-bottom: 12px;
+  }
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .product-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .product-info {
+    margin-left: 0;
+    width: 100%;
+  }
+  .product-price-sold {
+    margin-left: 0;
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+}
+
+@media (max-width: 320px) {
+  .product-row {
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+  }
+    .login-img-prod {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    margin-bottom: 12px;
+  }
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .product-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .product-info {
+    margin-left: 0;
+    width: 100%;
+  }
+  .product-price-sold {
+    margin-left: 0;
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
 }
