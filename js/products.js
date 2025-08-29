@@ -1,3 +1,11 @@
+// Mostrar usuario logueado en el navbar
+document.addEventListener('DOMContentLoaded', function() {
+	const user = localStorage.getItem('usuarioLogueado');
+	const userSpan = document.getElementById('navbar-username');
+	if (user && userSpan) {
+		userSpan.textContent = user;
+	}
+});
 // URL de ejemplo para productos de la categoría 101 (Autos)
 const AUTOS_URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
