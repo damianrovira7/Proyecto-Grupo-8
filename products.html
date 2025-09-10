@@ -39,15 +39,20 @@
     <div class="container">
       <img src="img/login.png" class="login-img-prod">
       <div class="row mb-3">
-        <div class="col-md-3">
+        <div class="col-md-2 mb-2 mb-md-0">
           <input type="number" id="minPrice" class="form-control" placeholder="Precio mínimo">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2 mb-2 mb-md-0">
           <input type="number" id="maxPrice" class="form-control" placeholder="Precio máximo">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 mb-2 mb-md-0">
           <button id="filterPriceBtn" class="btn btn-primary">Filtrar</button>
           <button id="clearPriceBtn" class="btn btn-secondary ms-2">Limpiar</button>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <button id="sortPriceAsc" class="btn btn-outline-secondary btn-sm">Precio ↑</button>
+          <button id="sortPriceDesc" class="btn btn-outline-secondary btn-sm">Precio ↓</button>
+          <button id="sortSoldDesc" class="btn btn-outline-secondary btn-sm">Más vendidos</button>
         </div>
       </div>
       <div id="products-list" class="row g-4"></div>

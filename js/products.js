@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let productosOriginales = [];
 
+let productosOrdenados = [];
+
 document.addEventListener('DOMContentLoaded', function() {
 	const container = document.getElementById('products-list');
 	const catID = localStorage.getItem('catID');
@@ -26,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		.then(result => {
 			if (result.status === 'ok') {
 				productosOriginales = result.data.products;
-				mostrarProductos(productosOriginales);
+				productosOrdenados = [...productosOriginales];
+				mostrarProductos(productosOrdenados);
 			} else {
 				container.innerHTML = '<div class="alert alert-danger">No se pudieron cargar los productos.</div>';
 			}
@@ -37,14 +40,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Filtro por precio
 	document.getElementById('filterPriceBtn').addEventListener('click', function() {
-		filtrarProductos(productosOriginales);
+		filtrarProductos(productosOrdenados);
 	});
 	document.getElementById('clearPriceBtn').addEventListener('click', function() {
 		document.getElementById('minPrice').value = '';
 		document.getElementById('maxPrice').value = '';
-		mostrarProductos(productosOriginales);
+		mostrarProductos(productosOrdenados);
+	});
+
+	// Ordenar por precio ascendente
+	document.getElementById('sortPriceAsc').addEventListener('click', function() {
+		productosOrdenados = [...productosOrdenados].sort((a, b) => a.cost - b.cost);
+		mostrarProductosFiltrados();
+	});
+	// Ordenar por precio descendente
+	document.getElementById('sortPriceDesc').addEventListener('click', function() {
+		productosOrdenados = [...productosOrdenados].sort((a, b) => b.cost - a.cost);
+		mostrarProductosFiltrados();
+	});
+	// Ordenar por relevancia (vendidos descendente)
+	document.getElementById('sortSoldDesc').addEventListener('click', function() {
+		productosOrdenados = [...productosOrdenados].sort((a, b) => b.soldCount - a.soldCount);
+		mostrarProductosFiltrados();
 	});
 });
+
+// Muestra los productos ordenados y filtrados según los inputs de precio
+function mostrarProductosFiltrados() {
+	let min = document.getElementById('minPrice').value;
+	let max = document.getElementById('maxPrice').value;
+	min = min !== '' ? parseInt(min) : -Infinity;
+	max = max !== '' ? parseInt(max) : Infinity;
+	const productosFiltrados = productosOrdenados.filter(prod => prod.cost >= min && prod.cost <= max);
+	mostrarProductos(productosFiltrados);
+}
 
 function mostrarProductos(productos) {
 	const contenedor = document.getElementById('products-list');
