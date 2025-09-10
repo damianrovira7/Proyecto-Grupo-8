@@ -292,6 +292,7 @@ a.custom-card:hover {
   padding: 20px;
 }
 
+/*Estilo username*/
 .navbar-username {
   display: flex;
   text-align: right;
