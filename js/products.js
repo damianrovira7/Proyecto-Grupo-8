@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 let productosOriginales = [];
 
 let productosOrdenados = [];
+let searchTerm = '';
 
 document.addEventListener('DOMContentLoaded', function() {
 	const container = document.getElementById('products-list');
@@ -40,13 +41,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Filtro por precio
 	document.getElementById('filterPriceBtn').addEventListener('click', function() {
-		filtrarProductos(productosOrdenados);
+		mostrarProductosFiltrados();
 	});
 	document.getElementById('clearPriceBtn').addEventListener('click', function() {
 		document.getElementById('minPrice').value = '';
 		document.getElementById('maxPrice').value = '';
-		mostrarProductos(productosOrdenados);
+		const si = document.getElementById('searchInput');
+		if (si) si.value = '';
+		searchTerm = '';
+		mostrarProductosFiltrados();
 	});
+
+	// Búsqueda en tiempo real
+	const searchInput = document.getElementById('searchInput');
+	if (searchInput) {
+		searchInput.addEventListener('input', function(e) {
+			searchTerm = e.target.value.trim().toLowerCase();
+			mostrarProductosFiltrados();
+		});
+	}
 
 	// Ordenar por precio ascendente
 	document.getElementById('sortPriceAsc').addEventListener('click', function() {
@@ -71,7 +84,17 @@ function mostrarProductosFiltrados() {
 	let max = document.getElementById('maxPrice').value;
 	min = min !== '' ? parseInt(min) : -Infinity;
 	max = max !== '' ? parseInt(max) : Infinity;
-	const productosFiltrados = productosOrdenados.filter(prod => prod.cost >= min && prod.cost <= max);
+
+	// Filtro por precio + búsqueda (título y descripción)
+	const term = searchTerm;
+	const productosFiltrados = productosOrdenados.filter(prod => {
+		const matchesPrice = prod.cost >= min && prod.cost <= max;
+		if (!matchesPrice) return false;
+		if (!term) return true;
+		const name = (prod.name || '').toLowerCase();
+		const desc = (prod.description || '').toLowerCase();
+		return name.includes(term) || desc.includes(term);
+	});
 	mostrarProductos(productosFiltrados);
 }
 
