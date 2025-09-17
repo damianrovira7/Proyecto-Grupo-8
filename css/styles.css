@@ -1,3 +1,4 @@
+
 .jumbotron,
 .card-body,
 .container,
@@ -390,4 +391,12 @@ a.custom-card:hover {
     text-align: left;
     margin-top: 8px;
   }
+}
+
+/* Imágenes detalle producto: tamaño fijo y ajuste para 4 en línea */
+.product-img-detail {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  flex: 1 1 0;
 }

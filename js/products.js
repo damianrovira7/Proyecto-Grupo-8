@@ -108,7 +108,7 @@ function mostrarProductos(productos) {
 	productos.forEach(prod => {
 		contenedor.innerHTML += `
 			<div class="product-row">
-				<div class="product-card">
+				<div class="product-card product-clickable" data-product-id="${prod.id}">
 					<img src="${prod.image}" alt="${prod.name}" class="product-img">
 					<div class="product-info">
 						<h5 class="product-title">${prod.name}</h5>
@@ -121,6 +121,14 @@ function mostrarProductos(productos) {
 				</div>
 			</div>
 		`;
+	});
+	// Agregar listeners para redirigir al detalle
+	document.querySelectorAll('.product-clickable').forEach(card => {
+		card.addEventListener('click', function() {
+			const id = this.getAttribute('data-product-id');
+			localStorage.setItem('productID', id);
+			window.location = 'product-info.html';
+		});
 	});
 }
 
