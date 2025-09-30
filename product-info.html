@@ -48,6 +48,47 @@
           <p class="text-center"><strong>Vendidos:</strong> <span id="product-sold"></span></p>
         </div>
       </div>
+
+      <!-- Calificaciones -->
+      <section id="ratings" class="my-4">
+        <h3>Calificaciones</h3>
+        <div id="ratings-list" class="list-group"></div>
+      </section>
+
+      <!-- Formulario para calificar -->
+      <section id="rating-form-section" class="my-4">
+        <h3>Dejá tu calificación</h3>
+        <form id="rating-form" class="row g-3">
+          <div class="col-12">
+            <label for="rating-text" class="form-label">Comentario</label>
+            <textarea id="rating-text" class="form-control" rows="3" placeholder="Escribí tu opinión..."></textarea>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <label class="form-label d-block">Puntuación</label>
+            <div class="rating" aria-label="Puntuación de 1 a 5">
+              <input type="radio" id="star5" name="rating-score" value="5">
+              <label for="star5" title="5 estrellas">★</label>
+              <input type="radio" id="star4" name="rating-score" value="4">
+              <label for="star4" title="4 estrellas">★</label>
+              <input type="radio" id="star3" name="rating-score" value="3">
+              <label for="star3" title="3 estrellas">★</label>
+              <input type="radio" id="star2" name="rating-score" value="2">
+              <label for="star2" title="2 estrellas">★</label>
+              <input type="radio" id="star1" name="rating-score" value="1" checked>
+              <label for="star1" title="1 estrella">★</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Productos relacionados -->
+      <section id="related-products" class="my-4">
+        <h3>Productos relacionados</h3>
+        <div id="related-grid" class="row g-3"></div>
+      </section>
     </div>
   </main>
   <footer class="text-muted">

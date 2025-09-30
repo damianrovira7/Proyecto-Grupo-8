@@ -256,16 +256,17 @@ a.custom-card:hover {
   border: 1px solid #dee2e6;
   border-radius: 0.5rem;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   background: #fff;
   width: 100%;
+  cursor: pointer;
 }
 .product-img {
   width: 120px;
   height: 90px;
   object-fit: cover;
   border-radius: 8px;
-  margin-right: 0;
+  margin-right: 20px;
 }
 .product-info {
   text-align: left;
@@ -290,7 +291,7 @@ a.custom-card:hover {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding: 20px;
+  padding: 5px;
 }
 
 /*Estilo username*/
@@ -399,4 +400,40 @@ a.custom-card:hover {
   max-height: 300px;
   object-fit: contain;
   flex: 1 1 0;
+  margin: 5px;
+}
+
+/* Control gráfico de estrellas para calificar */
+.rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+}
+.rating input {
+  display: none;
+}
+.rating label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: orange;
+}
+
+/* Espaciado para información del producto */
+#product-images {
+  margin-bottom: 40px !important;
+}
+
+#product-info h2 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+#product-info p {
+  margin-bottom: 8px;
 }
