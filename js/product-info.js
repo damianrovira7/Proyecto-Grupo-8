@@ -82,7 +82,6 @@ function cargarComentarios(productID) {
   // Intentar cargar desde API si existe COMMENTS_URL
   const commentsKey = `comments_${productID}`;
   const locales = JSON.parse(localStorage.getItem(commentsKey) || '[]');
-  // Si el proyecto tiene COMMENTS_URL y EXT_TYPE definidos en init.js, podríamos combinarlos
   const commentsUrl = typeof PRODUCT_INFO_COMMENTS_URL !== 'undefined' ? `${PRODUCT_INFO_COMMENTS_URL}${productID}${EXT_TYPE}` : null;
   if (commentsUrl) {
     getJSONData(commentsUrl).then(res => {
