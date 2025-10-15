@@ -1,3 +1,111 @@
+.navbar-username {
+  color: #fff !important;
+}
+body.dark-mode .navbar-user-actions .navbar-username {
+  color: #fff !important;
+}
+body.dark-mode .navbar-username {
+  color: #fff !important;
+}
+/* Botones de usuario alineados a la derecha en navbar */
+.navbar-user-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5rem;
+}
+/* Forzar modo oscuro en productos generados dinámicamente y contenedores Bootstrap */
+body.dark-mode #products-list,
+body.dark-mode #products-list .row,
+body.dark-mode #products-list .product-row,
+body.dark-mode #products-list .product-card {
+  background: #484747 !important;
+  color: #f1f1f1 !important;
+  border-color: #f1f1f1 !important;
+}
+/* Modo oscuro para el contenedor principal de productos */
+body.dark-mode #products-list {
+  background: #484747 !important;
+  color: #f1f1f1 !important;
+}
+/* Modo oscuro para .row y .g-4 (Bootstrap) */
+body.dark-mode .row,
+body.dark-mode .g-4 {
+  margin: 0;
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+}
+/* Forzar modo oscuro en todos los product-row, incluso en media queries */
+body.dark-mode .product-row {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+  border-color: #f1f1f1 !important;
+}
+/* Modo oscuro para list-group */
+body.dark-mode .list-group,
+body.dark-mode .list-group-item, 
+body.dark-mode .product-row {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+  border-color: #f1f1f1 !important;
+}
+/* Evitar que el container de la navbar cambie en modo oscuro */
+body.dark-mode .navbar .container {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+/* Evitar que la navbar cambie de color en modo oscuro */
+body.dark-mode .navbar {
+  background-color: #212529 !important;
+  color: inherit !important;
+}
+body.dark-mode .navbar * {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+}
+/* Modo oscuro y claro global */
+body.dark-mode {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .jumbotron,
+body.dark-mode .container,
+body.dark-mode .card,
+body.dark-mode .card-body,
+body.dark-mode .site-header {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode a,
+body.dark-mode .nav-link,
+body.dark-mode .btn-light {
+  color: inherit !important;
+  background-color: inherit !important;
+  border-color: inherit !important;
+}
+
+body.dark-mode .btn-light {
+  border: 1px solid #f1f1f1;
+}
+
+body.dark-mode .album {
+  background-color: #484747 !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+  border-color: #f1f1f1 !important;
+}
+
+body.dark-mode .shadow-sm {
+  box-shadow: none !important;
+}
 
 .jumbotron,
 .card-body,
@@ -292,7 +400,20 @@ a.custom-card:hover {
   flex-wrap: wrap;
   width: 100%;
   padding: 5px;
+  background: #fff;
 }
+
+body.dark-mode .product-row {
+  background: #484747 !important;
+  color: #f1f1f1 !important;
+}
+
+
+body.dark-mode .product-row {
+  background-color: #484747 !important;
+  color: #f1f1f1 !important;
+}
+
 
 /*Estilo username*/
 .navbar-username {

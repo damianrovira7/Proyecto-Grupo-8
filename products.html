@@ -32,7 +32,12 @@
           </li>
         </ul>
       </div>
-      <span id="navbar-username" class="navbar-username ms-auto"></span>
+  <span id="navbar-username" class="navbar-username ms-auto"></span>
+      <div class="navbar-user-actions">
+        <span id="navbar-username" class="navbar-username"></span>
+        <a href="my-profile.html" class="btn btn-info">Mi perfil</a>
+        <button id="toggle-darkmode" class="btn btn-light">Modo oscuro</button>
+      </div>
     </div>
   </nav>
   <main class="pb-5 container">
@@ -60,7 +65,7 @@
           <input type="search" id="searchInput" class="form-control" placeholder="Buscar por título o descripción...">
         </div>
       </div>
-      <div id="products-list" class="row g-4"></div>
+  <div id="products-list" class="row g-4 product-row"></div>
     </div>
   </main>
   <footer class="text-muted">
@@ -82,6 +87,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
+<script src="js/modo-color.js"></script>
 </body>
 
 </html>
